@@ -128,7 +128,7 @@
 
 
 (defn -main []
-  (jetty/run-jetty #'app {:port 3002 :join? true}))
+  (jetty/run-jetty #'app {:port 3003 :join? true}))
 
 
 
