@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'SimSun';
-  src: url('https://chyay.ru/static/css/SimSun-Lite.ttf') format('ttf');
+  src: url('SimSun-Lite.ttf') format('ttf');
+  font-display: swap;
 }
 
 
