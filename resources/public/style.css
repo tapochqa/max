@@ -1,27 +1,39 @@
+@import url('./STFangsong-Lite.woff2');
+
+@font-face {
+  font-family: 'STFangsong';
+  src: url('./STFangsong-Lite-fix4.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
 @font-face {
   font-family: 'SimSun';
-  src: url('SimSun-Lite.ttf') format('ttf');
-  font-display: swap;
+  src: url('./SimSun-Lite.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
 }
 
 
 button, input, body, span {
-	font-family: "SimSun", serif;
 	color: #4C4B4B;
-	letter-spacing: 0.1em;
 	font-size: 1.5rem;
+	line-height: 1.1;
 }
 
 h1, h2, h3, h4 {
-	font-family: "SimSun", serif;
-	letter-spacing: 0.05em;
+	font-family: "STFangsong";
 }
 
 h1 {
 	font-size: 2.5rem;
 }
 
-p {
+p, .p {
+	font-family: "STFangsong";
+	letter-spacing: 0em;
 	font-size: 1.5rem;
-	letter-spacing: 0.05em;
 }
+

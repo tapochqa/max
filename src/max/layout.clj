@@ -37,11 +37,11 @@
   (hiccup/html
     [:div.header   
      (hiccup/html
-       [:span "макс.лимонадный.ру"]
+       [:span.p "макс.лимонадный.ру"]
        space
-       [:a {:href "https://limonadny.ru"} "лзм"]
+       [:a.p {:href "https://limonadny.ru"} "лзм"]
        space
-       [:a {:href "https://chyay.ru"} "чяй"]
+       [:a.p {:href "https://chyay.ru"} "чяй"]
        )]))
 
 
