@@ -85,11 +85,18 @@
 
 
 (defn page-404
-  [request])
+  [request]
+  (helper/html-response (assoc request :bare true)
+    (hiccup/html 
+      [:h1 "Чоч."]
+      [:a {:href "/"} "На гл."])))
 
 
 (defn page-500
-  [request])
+  [request]
+  (helper/html-response (assoc request :bare true)
+    (hiccup/html 
+      [:h1 "500??? На статическом сайте?"])))
 
 
 (compojure/defroutes raw-app
