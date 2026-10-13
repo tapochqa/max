@@ -1,0 +1,1 @@
+/opt/homebrew/bin/lein run
