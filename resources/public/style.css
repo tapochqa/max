@@ -17,7 +17,9 @@
 }
 
 
-button, input, body, span {
+button, input, textarea, body, span {
+	font-family: "STFangsong";
+	font-weight: 700;
 	color: #4C4B4B;
 	font-size: 1.5rem;
 	line-height: 1.1;
@@ -36,4 +38,5 @@ p, .p {
 	letter-spacing: 0em;
 	font-size: 1.5rem;
 }
+
 
