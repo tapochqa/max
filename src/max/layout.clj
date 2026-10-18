@@ -35,7 +35,7 @@
 (defn header
   [request]
   (hiccup/html
-    [:div.header   
+    [:div.header.center   
      (hiccup/html
        [:span.p "макс.лимонадный.ру"]
        space
@@ -48,7 +48,7 @@
 (defn footer
   [request]
   (hiccup/html
-    [:div.footer   
+    [:div.footer.center 
      (hiccup/html 
        [:br][:br][:br][:br][:br][:br][:br][:br][:br][:br]
-       [:p "*шум подвала*"])]))
+       [:a {:href "/new"} "Написать новый пост"])]))

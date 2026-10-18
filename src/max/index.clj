@@ -2,7 +2,8 @@
   (:require
    [hiccup2.core :as hiccup]
    
-   [max.helper :as helper]))
+   [max.helper :as helper]
+   [max.text-processor :as text-processor]))
 
 (def titles
   ["Сайт-визитка Максима Саковича"
@@ -39,32 +40,51 @@
 (defn page-index
   [request]
   (helper/html-response request
-    (hiccup/html [:h1 
+    (hiccup/html 
+      [:div
+                [:h1.center 
                   (-> titles
                       shuffle
                       first)
                 
                 [:br] [:br]
-                
-                [:p "Написал более 50 треков в составе группы «" 
-                 [:a {:href "https://t.me/limonadny_zavod"} "Максим Толстов"] "»."]
-
-                [:p "Автоматизировал свою жизнь при помощи " 
-                 [:a {:href "https://github.com/tapochqa?tab=repositories"} "пет-проектов на кложе"] "."]
-                
-                [:p "В свободное время профессионально пью чай."]
+                 
+                [:div.column
                   
-                [:p "У меня есть " [:a {:href "https://vk.ru/meloxicam"} "вк"] 
-                 ". У меня есть " 
-                 [:a {:href "https://www.instagram.com/briskovi4"} "инста"] 
-                 ". <-- инстаграм — террористы! и враги"]
-                [:p "У меня есть " 
-                 [:a {:href "https://www.avito.ru/brands/1cee57cc05efe1fa331bdf1c7813fe5b"} "авито"] 
-                 ". У меня есть " 
-                 [:a {:href "https://www.youtube.com/@TAPOCHQA"} "ютуб"] 
-                 "."]
-                [:p "У меня есть электропочта " 
-                 [:a {:href "mailto:max@limonadny.ru"} "max@limonadny.ru"] 
-                 ". И лс "
-                 [:a {:href "https://t.me/briskovic"} "в телеге"]
-                 "."]])))
+                  [:p "Написал более 50 треков в составе группы «" 
+                   [:a {:href "https://t.me/limonadny_zavod"} "Максим Толстов"] "»."]
+
+                  [:p "Автоматизировал свою жизнь при помощи " 
+                   [:a {:href "https://github.com/tapochqa?tab=repositories"} "пет-проектов на кложе"] "."]
+                  
+                  [:p "В свободное время профессионально пью чай."]
+                    
+                  [:p "У меня есть " [:a {:href "https://vk.ru/meloxicam"} "вк"] 
+                   ". У меня есть " 
+                   [:a {:href "https://www.instagram.com/briskovi4"} "инста"] 
+                   ". <-- инстаграм — террористы! и враги"]
+                  [:p "У меня есть " 
+                   [:a {:href "https://www.avito.ru/brands/1cee57cc05efe1fa331bdf1c7813fe5b"} "авито"] 
+                   ". У меня есть " 
+                   [:a {:href "https://www.youtube.com/@TAPOCHQA"} "ютуб"] 
+                   "."]
+                  [:p "У меня есть электропочта " 
+                   [:a {:href "mailto:max@limonadny.ru"} "max@limonadny.ru"] 
+                   ". И лс "
+                   [:a {:href "https://t.me/briskovic"} "в телеге"]
+                   "."]
+
+                   [:br] [:br]
+
+                   [:p.center "--------------------------"]
+
+                   [:br] [:br]
+
+                   (map hiccup/raw (text-processor/index "../max-img/txt"))]]]
+      
+      
+      
+      
+      
+      
+      )))

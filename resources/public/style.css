@@ -17,6 +17,13 @@
 }
 
 
+@media screen and (max-width: 499px) {
+	.column {
+		max-width: 95% !important;
+	}
+}
+
+
 button, input, textarea, body, span {
 	font-family: "STFangsong";
 	font-weight: 700;
@@ -39,4 +46,17 @@ p, .p {
 	font-size: 1.5rem;
 }
 
+textarea {
+	max-width: 95%;
+}
 
+.center {
+	text-align: center;
+}
+
+.column {
+	text-align: left;
+	max-width: 45rem;
+	margin-left: auto;
+	margin-right: auto;
+}
