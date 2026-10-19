@@ -51,4 +51,5 @@
     [:div.footer.center 
      (hiccup/html 
        [:br][:br][:br][:br][:br][:br][:br][:br][:br][:br]
+       [:p "Гарнитура Эс-тэ фансун"]
        [:a {:href "/new"} "Написать новый пост"])]))
