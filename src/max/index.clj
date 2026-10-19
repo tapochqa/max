@@ -78,13 +78,11 @@
 
                    [:p.center "--------------------------"]
 
-                   [:br] [:br]
+                   (map hiccup/raw (text-processor/index (-> request :globals :txt)))]]])))
 
-                   (map hiccup/raw (text-processor/index "../max-img/txt"))]]]
-      
-      
-      
-      
-      
-      
-      )))
+
+
+
+
+
+

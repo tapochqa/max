@@ -11,6 +11,10 @@
    [max.layout :as layout]))
 
 
+(def GLOBALS
+  {:txt "../max-img/txt"})
+
+
 (defn parse-json-body [request]
   (let [body (ring-request/body-string request)]
     (when (and body (not (empty? body)))

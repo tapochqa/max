@@ -32,16 +32,19 @@
   (hiccup/html [:span.space " / "]))
 
 
+(defn header-link
+  [{:keys [uri] :as request} href content]
+  (if (= uri href) 
+    (hiccup/html [:span.p content])
+    (hiccup/html [:a {:href href} content])))
+
+
 (defn header
   [request]
   (hiccup/html
     [:div.header.center   
      (hiccup/html
-       [:span.p "макс.лимонадный.ру"]
-       space
-       [:a.p {:href "https://limonadny.ru"} "лзм"]
-       space
-       [:a.p {:href "https://chyay.ru"} "чяй"]
+       (header-link request "/" "макс.лимонадный.ру")
        )]))
 
 
@@ -52,4 +55,4 @@
      (hiccup/html 
        [:br][:br][:br][:br][:br][:br][:br][:br][:br][:br]
        [:p "Гарнитура Эс-тэ фансун"]
-       [:a {:href "/new"} "Написать новый пост"])]))
+       [:a {:href "/new"} "Нвй пст"])]))

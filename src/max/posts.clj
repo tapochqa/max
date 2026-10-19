@@ -3,7 +3,8 @@
    [hiccup2.core :as hiccup]
    [java-time.api :as jt]
    
-   [max.helper :as helper]))
+   [max.helper :as helper]
+   [max.text-processor :as text-processor]))
 
 (defn date
   []
@@ -23,10 +24,18 @@
                :type "textarea"
                :rows 40
                :cols 40}
-       (format "%s\n\n"
+       (format "Зглвк\n\n%s\n\n"
          (date))]
       [:br] [:br]
       [:button {:id "save-button"} "Сохранить в файл"]
       [:script (hiccup/raw (slurp "js/save-as-file.js"))]]
       
       )))
+
+
+(defn page-show
+  [request path]
+  (helper/html-response request 
+    (hiccup/html
+      [:div.column
+        (hiccup/raw (text-processor/compile-post (format "%s.txt" path) false))])))

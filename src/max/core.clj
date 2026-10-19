@@ -26,7 +26,9 @@
 
 
 
-
+(defn wrap-globals [handler]
+  (fn [request]
+    (handler (assoc request :globals helper/GLOBALS))))
 
 
 (defn wrap-production-errors [handler]
@@ -44,7 +46,8 @@
     (ring.keyword-params/wrap-keyword-params)
     (ring.params/wrap-params)
     (ring.resource/wrap-resource "public")
-    (wrap-production-errors)))
+    (wrap-production-errors)
+    (wrap-globals)))
 
 
 (def app
