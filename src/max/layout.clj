@@ -35,8 +35,8 @@
 (defn header-link
   [{:keys [uri] :as request} href content]
   (if (= uri href) 
-    (hiccup/html [:span.p content])
-    (hiccup/html [:a {:href href} content])))
+    (hiccup/html [:span.p.header-link content])
+    (hiccup/html [:a.header-link {:href href} content])))
 
 
 (defn header

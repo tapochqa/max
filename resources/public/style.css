@@ -58,8 +58,20 @@ p, .p {
 	font-size: 1.5rem;
 }
 
-.post-date {
-	
+.header {
+	background-color: #4C4B4B;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header-link {
+	color: white;
+}
+
+.header-link:visited {
+	color: white;
 }
 
 textarea {
