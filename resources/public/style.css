@@ -82,12 +82,16 @@ p, .p {
 	padding: 0 !important;
 }
 
-.header-link {
-	color: white;
+.monochrome-link {
+	color: white !important;
 }
 
-.header-link:visited {
-	color: white;
+.monochrome-link:visited {
+	color: white !important;
+}
+
+.inverted {
+	filter: invert(0.7);
 }
 
 textarea {

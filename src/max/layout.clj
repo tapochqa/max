@@ -35,8 +35,8 @@
 (defn header-link
   [{:keys [uri] :as request} href content]
   (if (= uri href) 
-    (hiccup/html [:span.p.header-link content])
-    (hiccup/html [:a.header-link {:href href} content])))
+    (hiccup/html [:span.p.monochrome-link content])
+    (hiccup/html [:a.monochrome-link {:href href} content])))
 
 
 (defn header
@@ -51,8 +51,9 @@
 (defn footer
   [request]
   (hiccup/html
-    [:div.footer.center 
+    [:footer.footer.center 
      (hiccup/html 
        [:br][:br][:br][:br][:br][:br][:br][:br][:br][:br]
        [:p "Гарнитура Эс-тэ фансун"]
-       [:a {:href "/new"} "Нвй пст"])]))
+       [:a.monochrome-link.inverted {:href "/new"} "Нвй пст"]
+       [:br][:br][:br])]))
