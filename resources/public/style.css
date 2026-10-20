@@ -24,7 +24,6 @@
 }
 
 body {
-	background-color: #4C4B4B;
 	margin: 0;
 }
 
@@ -39,6 +38,8 @@ button, input, textarea, body, span {
 
 main {
 	padding: 0.1;
+	margin: auto;
+	max-width: 95%;
 }
 
 main, .footer {
@@ -73,7 +74,6 @@ p, .p {
 }
 
 .header {
-	background-color: #4C4B4B;
 	height: 3rem;
 	display: flex;
 	align-items: center;
@@ -83,15 +83,15 @@ p, .p {
 }
 
 .monochrome-link {
-	color: white !important;
+	color: #4C4B4B !important;
 }
 
 .monochrome-link:visited {
-	color: white !important;
+	color: #4C4B4B !important;
 }
 
 .inverted {
-	filter: invert(0.7);
+	filter: invert(1);
 }
 
 textarea {

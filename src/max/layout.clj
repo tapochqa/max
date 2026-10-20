@@ -55,5 +55,5 @@
      (hiccup/html 
        [:br][:br][:br][:br][:br][:br][:br][:br][:br][:br]
        [:p "Гарнитура Эс-тэ фансун"]
-       [:a.monochrome-link.inverted {:href "/new"} "Нвй пст"]
+       [:a.monochrome-link {:href "/new"} "Нвй пст"]
        [:br][:br][:br])]))
