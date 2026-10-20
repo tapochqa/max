@@ -33,3 +33,22 @@
        (if-not bare (layout/header request))
        (hiccup/html [:main body])
        (if-not bare (layout/footer request)))}))
+
+
+(defn replace-month-genitive
+  [formatted]
+  
+  (-> formatted
+    (str/replace   "January" "января")
+    (str/replace  "February" "февраля")
+    (str/replace     "March" "марта")
+    (str/replace     "April" "апреля")
+    (str/replace       "May" "мая")
+    (str/replace      "June" "июня")
+    (str/replace      "July" "июля")
+    (str/replace    "August" "августа")
+    (str/replace "September" "сентября")
+    (str/replace   "October" "октября")
+    (str/replace  "November" "ноября")
+    (str/replace  "December" "декабря")))
+

@@ -1,7 +1,9 @@
 (ns max.text-processor
   (:require
    [max.helper :as helper]
+   
    [hiccup2.core :as hiccup]
+   [java-time.api :as jt]
    
    [clojure.string :as str]
    [clojure.java.io :as io])
@@ -10,6 +12,10 @@
    java.util.Date
    java.util.Base64
    java.text.Collator))
+
+
+(def DATE-REGEX
+  #"[0-3][0-9]\.[0-1][0-9]\.[0-2][0-9][0-9][0-9]")
 
 
 (defn format-date [date-string]
@@ -22,7 +28,7 @@
   [content]
   (let [date
         (re-find
-          #"[0-3][0-9]\.[0-1][0-9]\.[0-2][0-9][0-9][0-9]"
+          DATE-REGEX
           content)
         
         date
@@ -33,6 +39,20 @@
         unix
         (.getTime date)]
     unix))
+
+
+(defn convert-date
+  [content]
+  (let [date
+        (re-find DATE-REGEX content)
+        
+        formatted-date
+        (->> date 
+          (jt/local-date "dd.MM.yyyy")
+          (jt/format "dd MMMM yyyy")
+          helper/replace-month-genitive)]
+    
+    (str/replace content date (format "<span class='post-date'>%s</span>" formatted-date))))
 
 
 (defn path->filename
@@ -96,6 +116,9 @@
        
        content
        (str/trim content)
+       
+       content
+       (convert-date content)
        
        content
        (str/replace content #"\n\n" "</p><p>")
