@@ -1,17 +1,18 @@
-@import url('./STFangsong-Lite.woff2');
+@import url('./pt-serif-bold-italic.woff2');
+@import url('./pt-serif-bold.woff2');
+@import url('./pt-serif-italic.woff2');
+@import url('./pt-serif-regular.woff2');
 
 @font-face {
-  font-family: 'STFangsong';
-  src: url('./STFangsong-Lite-fix4.woff2') format('woff2');
-  font-weight: normal;
+  font-family: 'PT Serif';
+  font-weight: 200;
   font-style: normal;
   font-display: swap; 
 }
 
 @font-face {
-  font-family: 'SimSun';
-  src: url('./SimSun-Lite.woff2') format('woff2');
-  font-weight: normal;
+  font-family: 'PT Serif';
+  font-weight: 200;
   font-style: normal;
   font-display: swap; 
 }
@@ -28,11 +29,11 @@ body {
 }
 
 button, input, textarea, body, span {
-	font-family: "STFangsong";
-	font-weight: 700;
+	font-family: "PT Serif";
+	font-weight: 200;
 	color: #4C4B4B;
 	font-size: 1.5rem;
-	line-height: 1.1;
+	line-height: 1.5;
 	
 }
 
@@ -48,7 +49,7 @@ main, .footer {
 }
 
 h1, h2, h3, h4 {
-	font-family: "STFangsong";
+	font-family: "PT Serif";
 }
 
 h1 {
@@ -68,8 +69,8 @@ a:visited{
 }
 
 p, .p {
-	font-family: "STFangsong";
-	letter-spacing: 0em;
+	font-family: "PT Serif";
+	font-weight: 400;
 	font-size: 1.5rem;
 }
 
@@ -80,14 +81,6 @@ p, .p {
 	justify-content: center;
 	margin: 0 !important;
 	padding: 0 !important;
-}
-
-.monochrome-link {
-	color: #4C4B4B !important;
-}
-
-.monochrome-link:visited {
-	color: #4C4B4B !important;
 }
 
 .inverted {
@@ -107,4 +100,37 @@ textarea {
 	max-width: 45rem;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+
+
+
+
+// LINKS
+
+a {
+	color: #4C4B4B;
+	text-decoration-color: #b2ccf0;
+}
+
+a:link {
+  text-decoration: none;
+  border-bottom: 1px solid #7DA9F0;
+}	
+
+a:visited {
+	border-bottom: 1px solid #b40eb4;
+}
+
+a.image-link {
+	border-bottom: none;
+}
+
+.monochrome-link {
+	color: #4C4B4B !important;
+}
+
+.monochrome-link:visited {
+	color: #4C4B4B !important;
+	border-bottom: 1px solid #4C4B4B;
 }

@@ -10,7 +10,7 @@
   (hiccup/html
     
     [:head
-     [:link {:href "/style.css"     :rel "stylesheet"}]
+     [:link {:href (format "/style-%s.css" (slurp "version"))     :rel "stylesheet"}]
      
      [:meta {:charset "utf-8"}]
      [:meta {:name "viewport" 
@@ -54,6 +54,6 @@
     [:footer.footer.center 
      (hiccup/html 
        [:br][:br][:br][:br][:br][:br][:br][:br][:br][:br]
-       [:p "Гарнитура Эс-тэ фансун"]
+       [:p "Гарнитура ПТ Сериф"]
        [:a.monochrome-link {:href "/new"} "Нвй пст"]
        [:br][:br][:br])]))

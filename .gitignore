@@ -18,3 +18,4 @@ password
 api-key
 token
 TELEGRAM_OFFSET
+resources/public/style-*.css

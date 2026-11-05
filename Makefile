@@ -1,3 +1,6 @@
+VERSION = $(shell cat version)
+NEXT_VERSION = $$(( ${VERSION} + 1 ))
+
 plist:
 	launchctl unload ~/Library/LaunchAgents/ru.limonadny.max.plist
 	launchctl load ~/Library/LaunchAgents/ru.limonadny.max.plist
@@ -11,7 +14,7 @@ cp:
 tests:
 	lein test
 
-run:
+run: css
 	lein run
 
 run-bot:
@@ -31,6 +34,13 @@ setup:
 bundle:
 	lein install
 
+bump-version:
+	printf '%s' ${NEXT_VERSION} > version
+
+css: 
+	rm -f resources/public/style-[0-9]*.css
+	cp resources/public/style.css resources/public/style-${VERSION}.css
+
 daemon-restart:
 	launchctl kill -5 gui/501/ru.limonadny.max
 
@@ -42,9 +52,9 @@ upd: pull daemon-restart
 creds := $(shell git remote get-url micro)
 
 deploy-micro:
-	ssh ${creds} 'cd ~/deploy/max && git pull origin master && killall java'
+	ssh ${creds} 'cd ~/deploy/max && git pull origin master && make css && killall java'
 
-cpd:
+cpd: bump-version
 	@read -p "Commit message: " m; \
 	make tests; \
 	git add .; \
@@ -56,4 +66,4 @@ cpd:
 d: test deploy-micro
 
 
-cpdnt: cp deploy-micro
+cpdnt: bump-version cp deploy-micro
